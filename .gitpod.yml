@@ -1,0 +1,21 @@
+image: gitpod/workspace-full-vnc
+
+tasks:
+  - name: Reporting
+    init: |
+      pip install robotframework --pre
+      pip install robotframework-browser robotframework-requests influxdb-client allure-robotframework
+      npx playwright install-deps
+      rfbrowser init
+      wget https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.tgz
+      tar -xzf allure-2.25.0.tgz
+      rm allure-2.25.0.tgz
+    command: |
+      npx playwright install-deps
+ports:
+  - port: 6080
+    onOpen: open-preview
+vscode:
+  extensions:
+    - ms-python.python
+    - d-biehl.robotcode

@@ -1,0 +1,10 @@
+robotframework
+robotframework-pabot
+robotframework-browser
+robotframework-requests
+robotframework-soaplibrary
+robotframework-jsonlibrary
+pyotp
+influxdb-client
+allure-robotframework
+testarchiver
