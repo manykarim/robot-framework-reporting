@@ -34,11 +34,11 @@ jobs:
         rm allure-2.25.0.tgz
         rfbrowser init
     - name: Test with Robot Framework
-      continue-on-error: true
       run: |
         robot -d results --exclude car-configurator tests
     - name: Store Artifact
       uses: actions/upload-artifact@v3
+      if: success() || failure() 
       with:
         name: test-results ${{ matrix.python-version }} # Choose a descriptive name for your artifact
         path: |
