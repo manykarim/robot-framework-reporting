@@ -5,6 +5,7 @@ Library    String
 Test Template    Configure Car
 Suite Setup    New Browser    browser=chromium    headless=True
 Suite Teardown    Close Browser
+Test Tags    car-configurator
 
 
 *** Variables ***
