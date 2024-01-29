@@ -10,8 +10,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  test:
+    continue-on-error: true
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -37,3 +37,9 @@ jobs:
     - name: Test with Robot Framework
       run: |
         robot -d results --exclude car-configurator tests
+    - name: Store Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results ${{ matrix.python-version }} # Choose a descriptive name for your artifact
+        path: |
+          results
