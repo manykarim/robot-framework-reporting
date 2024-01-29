@@ -21,6 +21,25 @@ stats = result.statistics
 # print(stats.total.failed)
 # print(stats.total.passed)
 
+with open('test_overview_chart.md', "w") as f:
+    f.write("```mermaid\n")
+    f.write("%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#FF0000', 'pie3': '#FFFF00'}}}%%\n")
+    f.write("pie title Test Status\n")
+    f.write('    "Passed" : {stats.total.passed}\n')
+    f.write('    "Failed" : {stats.total.failed}\n')
+    f.write('    "Skipped" : {stats.total.skipped}\n')
+    f.write("```")
+
+
+# ```mermaid
+# %%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#FF0000', 'pie3': '#FFFF00'}}}%%
+# pie title Test Status
+#     "Passed" : 386
+#     "Failed" : 85
+#     "Skipped" : 15
+# ```
+
+
 suites_with_tests = get_suites_with_tests(result.suite)
 
 suite_results = []
@@ -51,8 +70,9 @@ with open('test_results.md', "w") as f:
         writer.write_table()
 
 import os
-
-with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f :
-    overview = open('test_overview.md', "r").read()
-    results = open('test_results.md', "r").read()
-    print(overview + "\n" + results, file=f)
+if "GITHUB_STEP_SUMMARY" in os.environ :
+    with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f :
+        chart = open('test_overview_chart.md', "r").read()
+        overview = open('test_overview.md', "r").read()
+        results = open('test_results.md', "r").read()
+        print(chart + "\n" + overview + "\n" + results, file=f)
