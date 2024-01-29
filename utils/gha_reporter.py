@@ -25,9 +25,9 @@ with open('test_overview_chart.md', "w") as f:
     f.write("```mermaid\n")
     f.write("%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#FF0000', 'pie3': '#FFFF00'}}}%%\n")
     f.write("pie title Test Status\n")
-    f.write('    "Passed" : {stats.total.passed}\n')
-    f.write('    "Failed" : {stats.total.failed}\n')
-    f.write('    "Skipped" : {stats.total.skipped}\n')
+    f.write(f'    "Passed" : {stats.total.passed}\n')
+    f.write(f'    "Failed" : {stats.total.failed}\n')
+    f.write(f'    "Skipped" : {stats.total.skipped}\n')
     f.write("```")
 
 
