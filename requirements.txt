@@ -8,3 +8,6 @@ pyotp
 influxdb-client
 allure-robotframework
 testarchiver
+psycopg2-binary
+SQLAlchemy
+pandas
