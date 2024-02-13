@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "dependencies": {
+    "grafanaDependency": ">=9.0.0",
+    "plugins": []
+  },
+  "id": "volkovlabs-variable-panel",
+  "info": {
+    "author": {
+      "name": "Volkov Labs",
+      "url": "https://volkovlabs.io"
+    },
+    "description": "Update single, dependent and multi-variables as a Table and Tree View",
+    "keywords": ["variable"],
+    "links": [
+      {
+        "name": "Documentation",
+        "url": "https://volkovlabs.io/plugins/volkovlabs-variable-panel"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/volkovlabs/volkovlabs-variable-panel"
+      }
+    ],
+    "logos": {
+      "large": "img/logo.svg",
+      "small": "img/logo.svg"
+    },
+    "screenshots": [
+      {
+        "name": "Panel",
+        "path": "img/dashboard.png"
+      }
+    ],
+    "updated": "2023-12-14",
+    "version": "2.3.1"
+  },
+  "name": "Variable",
+  "type": "panel"
+}
