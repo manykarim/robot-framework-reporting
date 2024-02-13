@@ -168,3 +168,7 @@ report.html
 *.tgz
 *.zip
 browser/
+.pabotsuitenames
+*.txt
+*.md
+*.html
