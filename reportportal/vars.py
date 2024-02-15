@@ -1,0 +1,8 @@
+RP_ENDPOINT="http://localhost:8080"
+RP_API_KEY="robot_MCRcPRUsQaK6chc-fOK6qxbCvRA9svlUIkfmzlbAa_D8ZTqdNNG5GqIayrl3Cdsu"
+RP_PROJECT="default_personal"
+RP_LAUNCH="test"
+RP_VERIFY_SSL="True"
+RP_LAUNCH_UUID_PRINT="True"
+RP_LAUNCH_UUID_PRINT_OUTPUT="stdout"
+RP_CLIENT_TYPE="SYNC"

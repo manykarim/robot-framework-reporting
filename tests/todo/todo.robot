@@ -37,7 +37,7 @@ Add ToDo And Mark Same ToDo
 
 *** Keywords ***
 ToDo App is open
-    New Page    https://todomvc.com/examples/react/
+    New Page    https://todomvc.com/examples/react/dist/
 
 I Add A New ToDo "${todo}"   
     Fill Text  .new-todo  ${todo}

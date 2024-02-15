@@ -3,7 +3,7 @@ Library    Browser    timeout=30
 Library    OperatingSystem
 Library    String
 Test Template    Configure Car
-Suite Setup    New Browser    browser=chromium    headless=True
+Suite Setup    New Browser    browser=chromium    headless=True    slowMo=0.5s
 Suite Teardown    Close Browser
 Test Tags    car-configurator
 
