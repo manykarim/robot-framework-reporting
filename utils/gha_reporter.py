@@ -2,24 +2,16 @@ from robot.api import ExecutionResult
 from pytablewriter import MarkdownTableWriter
 
 
-def get_suites_with_tests(suite):
-    """
-    Recursively walk through the suites to find suites containing tests.
-    """
-    suites_with_tests = []
-    if suite.tests:
-        # This suite has tests, add it to the list
-        suites_with_tests.append(suite)
-    else:
-        # This suite does not have tests, check its child suites
-        for sub_suite in suite.suites:
-            suites_with_tests.extend(get_suites_with_tests(sub_suite))
-    return suites_with_tests
+class SuitesWithTestsVisitor(ResultVisitor):
+    def __init__(self):
+        self.suites_with_tests=[]
+    def start_suite(self, suite):
+        if suite.tests:
+            self.suites_with_tests.append(suite)
+
 
 result = ExecutionResult('results/output.xml')
 stats = result.statistics
-# print(stats.total.failed)
-# print(stats.total.passed)
 
 with open('test_overview_chart.md', "w") as f:
     f.write("```mermaid\n")
@@ -30,7 +22,6 @@ with open('test_overview_chart.md', "w") as f:
     f.write(f'    "Skipped" : {stats.total.skipped}\n')
     f.write("```")
 
-
 # ```mermaid
 # %%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#FF0000', 'pie3': '#FFFF00'}}}%%
 # pie title Test Status
@@ -39,8 +30,9 @@ with open('test_overview_chart.md', "w") as f:
 #     "Skipped" : 15
 # ```
 
-
-suites_with_tests = get_suites_with_tests(result.suite)
+suite_visitor = SuitesWithTestsVisitor()
+result.visit(suite_visitor)
+suites_with_tests = suite_visitor.suites_with_tests
 
 suite_results = []
 for suite in suites_with_tests:
