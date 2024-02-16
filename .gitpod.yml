@@ -4,7 +4,7 @@ tasks:
   - name: Install
     init: |
       pip install -r requirements.txt
-      npx playwright install-deps
+      npx --yes playwright install-deps
       gp sync-done pip
   - name: Install Playwright Deps
     init: gp sync-await pip

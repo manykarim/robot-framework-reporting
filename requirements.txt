@@ -11,3 +11,4 @@ testarchiver
 psycopg2-binary
 SQLAlchemy
 pandas
+robotframework-reportportal
