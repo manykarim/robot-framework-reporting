@@ -23,6 +23,7 @@ with open('run_overview.md', "w") as f:
     writer = MarkdownTableWriter(table_name= "Run Overview", headers = run_columns, value_matrix = [[f"{pass_rate:.2f}%", stats.total.passed, stats.total.failed, stats.total.skipped, stats.total.total, result.suite.elapsed_time.total_seconds()]])
     writer.stream = f
     writer.write_table()
+    f.write("\n\n<br>\n\n")
 
 suite_results = []
 for suite in suites_with_tests:
@@ -34,6 +35,7 @@ with open('suite_overview.md', "w") as f:
     writer = MarkdownTableWriter(table_name= "Test Status", headers = table_columns, value_matrix = suite_results)
     writer.stream = f
     writer.write_table()
+    f.write("\n\n<br>\n\n")
 
 test_results = {}
 for suite in suites_with_tests:
@@ -51,6 +53,8 @@ with open('test_results.md', "w") as f:
         writer = MarkdownTableWriter(table_name= f"Failed and skipped tests in {suite}", headers = table_columns, value_matrix = test_results[suite])
         writer.stream = f
         writer.write_table()
+        f.write("\n\n<br>\n\n")
+
 
 run_overview = open('run_overview.md', "r").read()
 suite_overview = open('suite_overview.md', "r").read()
@@ -66,9 +70,9 @@ apobj.add('msteams://<teamName>/<tokenA>/<tokenB>/<tokenC>')
 
 if stats.total.failed == 0:
     title_message = "Test run completed successfully"
-    body_message = run_overview + "\n" + suite_overview
+    body_message = run_overview + suite_overview
     apobj.notify(body=body_message, title=title_message, notify_type=NotifyType.SUCCESS)
 else:
     title_message = f"Test run completed with {stats.total.failed} failures"
-    body_message = run_overview + "\n" + suite_overview + "\n" + results
+    body_message = run_overview + suite_overview + results
     apobj.notify(body=body_message, title=title_message, notify_type=NotifyType.FAILURE)
