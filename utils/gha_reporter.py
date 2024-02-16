@@ -1,4 +1,4 @@
-from robot.api import ExecutionResult
+from robot.api import ExecutionResult, ResultVisitor
 from pytablewriter import MarkdownTableWriter
 
 
