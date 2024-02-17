@@ -18,8 +18,9 @@ def main():
 
     result = ExecutionResult(output_file)
 
-    stats = result.statistics
 
+    # Write PieChart as Markdown
+    stats = result.statistics
     f.write("```mermaid\n")
     f.write("%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#00FF00', 'pie2': '#FF0000', 'pie3': '#FFFF00'}}}%%\n")
     f.write("pie title Test Status\n")
@@ -28,6 +29,7 @@ def main():
     f.write(f'    "Skipped" : {stats.total.skipped}\n')
     f.write("```\n")
 
+    # Get all suites with Tests
     suite_visitor = SuitesWithTestsVisitor()
     result.visit(suite_visitor)
     suites_with_tests = suite_visitor.suites_with_tests
@@ -36,8 +38,8 @@ def main():
     for suite in suites_with_tests:
         suite_results.append([suite.name, suite.statistics.passed, suite.statistics.failed, suite.statistics.skipped, suite.statistics.total, suite.elapsed_time.total_seconds()])
 
+    # Write Table with Results for each Suite as Markdown
     table_columns = ["Test Suite", "Passed ✅", "Failed ❌", "Skipped 🛑", "Total", "Elapsed Time ⏱️"]
-
     writer = MarkdownTableWriter(table_name= "Test Suite Status", headers = table_columns, value_matrix = suite_results)
     writer.stream = f
     writer.write_table()
@@ -49,6 +51,7 @@ def main():
             status = lambda test: "✅ PASS" if test.status == "PASS" else ("❌ FAIL" if test.status == "FAIL" else "🛑 SKIP")
             tests_in_suite.append([test.name, status(test), test.elapsed_time.total_seconds()])
 
+        # Write Table with Results for each Test Case for a Suite as Markdown
         table_columns = ["Test Case", "Status", "Elapsed Time ⏱️"]
         writer = MarkdownTableWriter(table_name= suite.name, headers = table_columns, value_matrix = tests_in_suite)
         writer.stream = f
