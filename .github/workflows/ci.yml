@@ -47,4 +47,4 @@ jobs:
       if: success() || failure() 
       run: |
         pip install -r utils/requirements.txt
-        python utils/gha_reporter.py
+        python utils/gha_reporter.py results/output.xml $GITHUB_STEP_SUMMARY
