@@ -2,7 +2,7 @@
 Library    Browser    #enable_presenter_mode=True
 Library    String
 Suite Setup    New Browser    browser=${BROWSER}    headless=${HEADLESS}
-Test Setup    New Context    viewport={'width': 1280, 'height': 720}    #recordVideo={'dir':'videos', 'size':{'width':400, 'height':200}}
+Test Setup    New Context    viewport={'width': 1280, 'height': 720}
 Test Teardown    Close Context
 Suite Teardown    Close Browser
 
