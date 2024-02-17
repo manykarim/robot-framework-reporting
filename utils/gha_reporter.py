@@ -44,12 +44,11 @@ def main():
     writer.stream = f
     writer.write_table()
     f.write("\n")
-
+    status_emoji = {"PASS": "✅", "FAIL": "❌", "SKIP": "🛑", "NOT RUN": "NOT RUN", "NOT SET": "❓"}
     for suite in suites_with_tests:
         tests_in_suite = []
         for test in suite.tests:
-            status = lambda test: "✅ PASS" if test.status == "PASS" else ("❌ FAIL" if test.status == "FAIL" else "🛑 SKIP")
-            tests_in_suite.append([test.name, status(test), test.elapsed_time.total_seconds()])
+            tests_in_suite.append([test.name, status_emoji[test.status], test.elapsed_time.total_seconds()])
 
         # Write Table with Results for each Test Case for a Suite as Markdown
         table_columns = ["Test Case", "Status", "Elapsed Time ⏱️"]
