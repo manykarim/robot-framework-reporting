@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Wrong Amount",
+      "messageRegex": "Text.*should be.*",
+      "matchedStatuses": ["failed"]
+    },
+    {
+      "name": "Site Not Reachable",
+      "messageRegex": "Error:.*Timeout.*",
+      "matchedStatuses": ["failed"]
+    }
+  ]
