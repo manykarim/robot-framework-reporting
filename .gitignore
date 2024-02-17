@@ -172,3 +172,4 @@ browser/
 *.txt
 *.md
 *.html
+**/pabot_results
