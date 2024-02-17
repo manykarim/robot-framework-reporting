@@ -62,7 +62,6 @@ results = open('test_results.md', "r").read()
 
 import apprise
 from apprise import NotifyType
-from apprise import NotifyFormat
 
 apobj = apprise.Apprise()
 
