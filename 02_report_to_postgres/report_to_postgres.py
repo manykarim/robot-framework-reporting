@@ -28,11 +28,10 @@ def upload_results(output, run, project, version):
 
     suites_with_tests = suite_visitor.suites_with_tests
 
-    # Convert run_metadata, so it can be stored as a JSON object in the database
 
     suite_results = []
     for suite in suites_with_tests:
-        suite_results.append([suite.full_name, suite.statistics.passed, suite.statistics.failed, suite.statistics.skipped, suite.statistics.total, suite.elapsed_time.total_seconds(), run_metadata, suite.start_time, suite.end_time])
+        suite_results.append([suite.name, suite.statistics.passed, suite.statistics.failed, suite.statistics.skipped, suite.statistics.total, suite.elapsed_time.total_seconds(), run_metadata, suite.start_time, suite.end_time])
 
     suite_results_columns = ["testsuite", "passed", "failed", "skipped", "total", "elapsedtime", "metadata", "starttime", "endtime"]
 
@@ -43,11 +42,11 @@ def upload_results(output, run, project, version):
     for suite in suites_with_tests:
         tests_in_suite = []
         for test in suite.tests:
-            test_results.append([test.name, test.status, test.elapsed_time.total_seconds(), suite.full_name, run_metadata, test.start_time, test.end_time])
+            test_results.append([test.name, test.status, test.elapsed_time.total_seconds(), suite.name, run_metadata, test.start_time, test.end_time])
             test_json.append([test.to_dict()])
 
     test_run_results_columns = ["testsuite", "passed", "failed", "skipped", "total", "elapsedtime", "metadata", "starttime", "endtime"] 
-    test_run_results = [[result.suite.full_name, result.statistics.total.passed, result.statistics.total.failed, result.statistics.total.skipped, result.statistics.total.total, result.suite.elapsed_time.total_seconds(), run_metadata, result.suite.start_time, result.suite.end_time]]
+    test_run_results = [[result.suite.name, result.statistics.total.passed, result.statistics.total.failed, result.statistics.total.skipped, result.statistics.total.total, result.suite.elapsed_time.total_seconds(), run_metadata, result.suite.start_time, result.suite.end_time]]
     test_run_results_df = pd.DataFrame(test_run_results, columns=test_run_results_columns)
 
     testresults_df = pd.DataFrame(test_results, columns=test_results_columns)
