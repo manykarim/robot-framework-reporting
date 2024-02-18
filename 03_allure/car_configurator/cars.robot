@@ -14,19 +14,19 @@ ${4SPACES}    ${SPACE}${SPACE}${SPACE}${SPACE}
 *** Test Cases ***    {MODEL}=0    ${ENGINE}=0    ${PACKAGE}=0    ${EXTRAS}=*    ${COLOR}=0    ${PRICE}=99.999,99 €
 Car 001    0    0    0    0    0    31.900,00 €
     [Tags]    allure.story:No Package
-Car 002    0    1    1    1    1    32.823,00 €
+Car 002    0    1    1    1    1    33.823,00 €
     [Tags]    allure.story:Gomera
 Car 003    0    2    2    2    2    36.498,99 €
     [Tags]    allure.story:Luxus
 Car 004    0    3    0    3    3    31.246,00 €
     [Tags]    allure.story:No Package
-Car 005    0    4    1    4    4    35.772,00 €
+Car 005    0    4    1    4    4    36.772,00 €
     [Tags]    allure.story:Gomera
 Car 006    0    0    2    5    5    34.499,99 €
     [Tags]    allure.story:Luxus
 Car 007    0    1    0    6    6    32.100,00 €
     [Tags]    allure.story:No Package
-Car 008    0    2    1    7    7    32.412,00 €
+Car 008    0    2    1    7    7    33.412,00 €
     [Tags]    allure.story:Gomera
 Car 009    0    3    2    0    8    36.699,99 €
     [Tags]    allure.story:Luxus
