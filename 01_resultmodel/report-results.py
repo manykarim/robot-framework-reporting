@@ -20,11 +20,19 @@ class TestFinder(ResultVisitor):
             self.f.write("| Passed | Failed | Skipped |\n")
             self.f.write("| --- | --- | --- |\n")
             self.f.write(f"| {stats.passed} | {stats.failed} | {stats.skipped} |\n\n")
+            self.f.write(f"### Test Results\n")
             self.f.write("| Test | Status | Elapsed |\n")
             self.f.write("| --- | --- | --- |\n")
     
     def start_test(self, test):
-        self.f.write(f"| {test.name} | {test.status} | {test.elapsed_time.total_seconds()} |\n")
+        status_emoji = {
+            "PASS": "✅PASS",
+            "FAIL": "❌FAIL",
+            "SKIP": "🛑SKIP",
+            "NOT RUN": "NOT RUN",
+            "NOT SET": "❓NOT SET",
+             }
+        self.f.write(f"| {test.name} | {status_emoji.get(test.status, "unknown")} | {test.elapsed_time.total_seconds()} |\n")
 
     def end_suite(self,suite):
         if suite.tests:
