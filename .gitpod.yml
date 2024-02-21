@@ -15,6 +15,7 @@ tasks:
       wget https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.tgz
       tar -xzf allure-2.25.0.tgz
       rm allure-2.25.0.tgz
+  - before: printf 'export PATH="%s:$PATH"\n' "$PWD/allure-2.25.0/bin" >> $HOME/.bashrc && exit
 ports:
   - port: 6080
     onOpen: open-preview
