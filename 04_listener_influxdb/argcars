@@ -1,0 +1,5 @@
+--listener 04_listener_influxdb/InfluxListener
+--output NONE
+--log NONE
+--report NONE
+tests/car_configurator/cars.robot
