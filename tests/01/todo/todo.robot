@@ -34,6 +34,12 @@ Add ToDo And Mark Same ToDo
     And I Mark ToDo "Learn Robot Framework"
     Then Open ToDos should show "0 items left!"
 
+Add ToDo And Mark Non Existing ToDo
+    [Tags]    Mark ToDo
+    Given ToDo App is open
+    When I Add A New ToDo "Learn Robot Framework"
+    And I Mark ToDo "Does Not Exist"
+    Then Open ToDos should show "0 items left!"
 
 *** Keywords ***
 ToDo App is open
