@@ -20,23 +20,25 @@ Try it out in  [Gitpod](https://gitpod.io/#https://github.com/manykarim/robotfra
 
 The repository is structured as follows:
 
-### 01_resultmodel:   
-Demonstrates how to use the `ExecutionResult` and `ResultVisitor` of the  of the Robot Framework API to generate custom reports.
+The repository is structured into the following sections:
 
-### 02_report_to_postgres:
-Demonstrates how to publish test results to a PostgreSQL database and visualize the results using Grafana.
+- **01_resultmodel**:   
+    This section demonstrates how to use the `ExecutionResult` and `ResultVisitor` of the Robot Framework API to generate custom reports.
 
-### 03_allure
-Demonstrates how to use Allure to generate a visually appealing report.
+- **02_report_to_postgres**:  
+    This section demonstrates how to publish test results to a PostgreSQL database and visualize the results using Grafana.
 
-### 04_listener_influxdb
-Demonstrates how to use a Listener to monitor test execution in realtime and publish them to InfluxDB and visualize the results using Grafana.
+- **03_allure**:  
+    This section demonstrates how to use Allure to generate a visually appealing report.
 
-### 05_notifications
-Demonstrates how to send notifications to Slack and MS Teams using Apprise.
+- **04_listener_influxdb**:  
+    This section demonstrates how to use a Listener to monitor test execution in realtime and publish them to InfluxDB and visualize the results using Grafana.
 
-### 06_reportportal
-Demonstrates how to publish test results to ReportPortal and visualize them.
+- **05_notifications**:  
+    This section demonstrates how to send notifications to Slack and MS Teams using Apprise.
+
+- **06_reportportal**:  
+    This section demonstrates how to publish test results to ReportPortal and visualize them.
 
 ## Docker Containers for PostgreSQL, InfluxDB and Grafana
 
