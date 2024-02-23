@@ -3,7 +3,6 @@ robotframework-pabot
 robotframework-browser
 robotframework-requests
 robotframework-jsonlibrary
-robotframework-datadriver
 pyotp
 influxdb-client
 allure-robotframework
@@ -12,3 +11,4 @@ psycopg2-binary
 SQLAlchemy
 pandas
 robotframework-reportportal
+pytablewriter
