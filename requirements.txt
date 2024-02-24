@@ -12,3 +12,4 @@ SQLAlchemy
 pandas
 robotframework-reportportal
 pytablewriter
+apprise
