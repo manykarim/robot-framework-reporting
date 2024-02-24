@@ -1,0 +1,3276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.5 on win32)" generated="2024-02-24T10:35:28.914262" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot-Framework-Reporting" source="C:\workspace\RBCN24\robot-framework-reporting">
+<suite id="s1-s1" name="Tests" source="C:\workspace\RBCN24\robot-framework-reporting\tests">
+<suite id="s1-s1-s1" name="Car Configurator" source="C:\workspace\RBCN24\robot-framework-reporting\tests\car_configurator">
+<suite id="s1-s1-s1-s1" name="Cars" source="C:\workspace\RBCN24\robot-framework-reporting\tests\car_configurator\cars.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2024-02-24T10:35:30.499181" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 500.0, "timeout": 30000.0, "tracesDir": "C:\\workspace\\RBCN24\\robot-framework-reporting\\results\\browser\\traces\\8cc8bd2b-f599-4779-adfd-095f5a26becd"}</msg>
+<msg time="2024-02-24T10:35:31.565439" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":500,"timeout":30000,"tracesDir":"C:\\workspace\\RBCN24\\robot-framework-reporting\\results\\browser\\traces\\8cc8bd2b-f599-4779-adfd-095f5a26becd"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=True</arg>
+<arg>slowMo=0.5s</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-02-24T10:35:30.489661" elapsed="1.076779"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Car 001" line="15">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:35:38.935790" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:35:38.935790" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:35:31.583924" elapsed="7.351866"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:38.937596" elapsed="0.660943"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:39.598539" elapsed="0.568562"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:40.167101" elapsed="0.740743"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:35:31.581922" elapsed="9.325922"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:40.908959" elapsed="0.581712"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:41.490671" elapsed="0.609592"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:42.155925" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:35:42.155925" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:42.101850" elapsed="0.054075"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:42.155925" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:42.155925" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:42.161153" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:42.155925" elapsed="0.005228"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:35:42.100263" elapsed="0.060890"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:42.161153" elapsed="0.623728"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:35:40.907844" elapsed="1.877037"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:42.785875" elapsed="0.565302"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:43.351177" elapsed="0.563952"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:43.943642" level="INFO">Text: '1.6 gasoline\t'</msg>
+<msg time="2024-02-24T10:35:43.943642" level="INFO">${value} = 1.6 gasoline	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:43.917273" elapsed="0.027676"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:43.946016" level="INFO">${value} = 1.6 gasoline</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:43.944949" elapsed="0.001067"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:43.947657" level="INFO">Set tag 'Engine=1.6 gasoline'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:43.947145" elapsed="0.000512"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:35:43.915129" elapsed="0.033978"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:43.949107" elapsed="0.612980"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:35:42.784881" elapsed="1.778200"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:44.563081" elapsed="0.571321"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:45.159170" level="INFO">Text: 'None'</msg>
+<msg time="2024-02-24T10:35:45.159170" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:45.136005" elapsed="0.023165"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:45.159170" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:45.159170" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:45.161840" level="INFO">Set tag 'Package=None'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:45.161840" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:35:45.135496" elapsed="0.026344"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:45.161840" elapsed="0.718894"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:35:44.563081" elapsed="1.318193"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:35:45.881274" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:35:45.881274" elapsed="0.002543"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:35:45.881274" elapsed="0.002543"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:35:45.881274" elapsed="0.002543"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:35:45.881274" elapsed="0.002543"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:45.883817" elapsed="0.562782"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:35:45.883817" elapsed="0.562782"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:35:45.881274" elapsed="0.565325"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:46.446599" elapsed="0.645680"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:35:45.881274" elapsed="1.211005"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:47.093798" elapsed="0.574649"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:47.696815" level="INFO">Text: 'White'</msg>
+<msg time="2024-02-24T10:35:47.696815" level="INFO">${value} = White</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:47.668447" elapsed="0.028368"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:47.699377" level="INFO">${value} = White</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:47.699377" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:47.699377" level="INFO">Set tag 'Color=White'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:47.699377" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:35:47.668447" elapsed="0.030930"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:47.702372" elapsed="0.660301"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:35:47.092279" elapsed="1.270394"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:48.389885" level="INFO">Text: '31.900,00 €'</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:48.364034" elapsed="0.026843"/>
+</kw>
+<arg>${PRICE}</arg>
+<status status="PASS" start="2024-02-24T10:35:48.362673" elapsed="0.028204"/>
+</kw>
+<arg>0</arg>
+<arg>0</arg>
+<arg>0</arg>
+<arg>0</arg>
+<arg>0</arg>
+<arg>31.900,00 €</arg>
+<status status="PASS" start="2024-02-24T10:35:31.579600" elapsed="16.811277"/>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=White</tag>
+<tag>Engine=1.6 gasoline</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=None</tag>
+<status status="PASS" start="2024-02-24T10:35:31.566440" elapsed="16.825440"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Car 002" line="16">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:35:54.907143" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:35:54.908510" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:35:48.462193" elapsed="6.446317"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:54.908510" elapsed="0.637821"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:55.547733" elapsed="0.559177"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:56.106910" elapsed="0.614105"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:35:48.462193" elapsed="8.259817"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:56.725014" elapsed="0.621363"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:57.346377" elapsed="0.582517"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:57.962928" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:35:57.962928" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:57.929898" elapsed="0.034024"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:57.965860" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:57.963922" elapsed="0.002953"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:57.967894" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:57.966875" elapsed="0.002013"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:35:57.928894" elapsed="0.039994"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:57.969396" elapsed="0.623775"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:35:56.723010" elapsed="1.870161"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:58.594504" elapsed="0.565042"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:59.159546" elapsed="0.539300"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:35:59.727883" level="INFO">Text: '2.0 gasoline\t'</msg>
+<msg time="2024-02-24T10:35:59.727883" level="INFO">${value} = 2.0 gasoline	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:59.700622" elapsed="0.027261"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:35:59.727883" level="INFO">${value} = 2.0 gasoline</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:35:59.727883" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:35:59.732618" level="INFO">Set tag 'Engine=2.0 gasoline'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:35:59.731610" elapsed="0.002309"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:35:59.699357" elapsed="0.034562"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:35:59.733919" elapsed="0.637290"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:35:58.594504" elapsed="1.776705"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:00.372257" elapsed="0.582986"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:00.988180" level="INFO">Text: 'Gomera'</msg>
+<msg time="2024-02-24T10:36:00.988180" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:00.955243" elapsed="0.032937"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:00.988180" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:00.988180" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:00.988180" level="INFO">Set tag 'Package=Gomera'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:00.988180" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:36:00.955243" elapsed="0.032937"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:00.997028" elapsed="0.666587"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:36:00.372257" elapsed="1.291532"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:01.665223" elapsed="0.001013"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:01.666236" elapsed="0.001003"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:36:01.666236" elapsed="0.001003"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:36:01.666236" elapsed="0.001003"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:36:01.665223" elapsed="0.002016"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:01.668237" elapsed="0.571506"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:01.667239" elapsed="0.572504"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:36:01.665223" elapsed="0.574520"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:02.239743" elapsed="0.650866"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:36:01.664200" elapsed="1.226409"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:02.891917" elapsed="0.562449"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:03.481866" level="INFO">Text: 'Yellow'</msg>
+<msg time="2024-02-24T10:36:03.481866" level="INFO">${value} = Yellow</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:03.457996" elapsed="0.023870"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:03.484377" level="INFO">${value} = Yellow</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:03.484377" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:03.487883" level="INFO">Set tag 'Color=Yellow'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:03.485892" elapsed="0.003088"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:36:03.454366" elapsed="0.034614"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:03.490217" elapsed="0.666513"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:36:02.890609" elapsed="1.267120"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:05.183257" level="INFO">Text: '32.659,00 €'</msg>
+<msg time="2024-02-24T10:36:05.340216" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:36:05.341221" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:36:05.341221" level="FAIL">Text '32.659,00 €' (str) should be '32.823,00 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:36:04.158754" elapsed="1.187093">Text '32.659,00 €' (str) should be '32.823,00 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:36:04.157729" elapsed="1.188118">Text '32.659,00 €' (str) should be '32.823,00 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>32.823,00 €</arg>
+<status status="FAIL" start="2024-02-24T10:35:48.461094" elapsed="16.884753">Text '32.659,00 €' (str) should be '32.823,00 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Yellow</tag>
+<tag>Engine=2.0 gasoline</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Gomera</tag>
+<status status="FAIL" start="2024-02-24T10:35:48.454361" elapsed="16.892646">Text '32.659,00 €' (str) should be '32.823,00 €' (str)</status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="Car 003" line="17">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:36:12.050616" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:36:12.050616" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:36:05.393510" elapsed="6.658126"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:12.051636" elapsed="0.633973"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:12.685609" elapsed="0.598482"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:13.284091" elapsed="0.625449"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:05.391957" elapsed="8.518128"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:13.911112" elapsed="0.582040"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:14.494332" elapsed="0.551963"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:15.071822" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:36:15.071822" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:15.046641" elapsed="0.025181"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:15.071822" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:15.071822" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:15.078332" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:15.078332" elapsed="0.001140"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:36:15.046641" elapsed="0.032831"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:15.079472" elapsed="0.586049"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:36:13.910085" elapsed="1.755436"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:15.668543" elapsed="0.594951"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:16.263494" elapsed="0.547483"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:16.847406" level="INFO">Text: '1.6 diesel\t'</msg>
+<msg time="2024-02-24T10:36:16.848443" level="INFO">${value} = 1.6 diesel	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:16.811988" elapsed="0.036455"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:16.849600" level="INFO">${value} = 1.6 diesel</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:16.848443" elapsed="0.001157"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:16.850739" level="INFO">Set tag 'Engine=1.6 diesel'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:16.849600" elapsed="0.001595"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:36:16.810977" elapsed="0.040218"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:16.852253" elapsed="0.591672"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:36:15.666542" elapsed="1.778825"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:17.447551" elapsed="0.568351"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:18.042805" level="INFO">Text: 'Luxus'</msg>
+<msg time="2024-02-24T10:36:18.042805" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:18.017030" elapsed="0.025775"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:18.049311" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:18.049311" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:18.050317" level="INFO">Set tag 'Package=Luxus'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:18.050317" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:36:18.017030" elapsed="0.033287"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:18.050317" elapsed="0.584605"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:36:17.445367" elapsed="1.189555"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:18.639263" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:18.640262" elapsed="0.001000"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:36:18.640262" elapsed="0.001000"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:36:18.639263" elapsed="0.001999"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:36:18.638264" elapsed="0.002998"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:18.641262" elapsed="0.562515"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:18.641262" elapsed="0.563639"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:36:18.638264" elapsed="0.566637"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:19.205871" elapsed="0.586473"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:36:18.636124" elapsed="1.157251"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:19.793375" elapsed="0.558964"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:20.375412" level="INFO">Text: 'Red'</msg>
+<msg time="2024-02-24T10:36:20.377881" level="INFO">${value} = Red</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:20.352339" elapsed="0.025542"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:20.379265" level="INFO">${value} = Red</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:20.377881" elapsed="0.001384"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:20.379778" level="INFO">Set tag 'Color=Red'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:20.379778" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:36:20.352339" elapsed="0.027439"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:20.381580" elapsed="0.631965"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:36:19.793375" elapsed="1.220170"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:22.058551" level="INFO">Text: '38.498,99 €'</msg>
+<msg time="2024-02-24T10:36:22.171839" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:36:22.171839" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:36:22.171839" level="FAIL">Text '38.498,99 €' (str) should be '36.498,99 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:36:21.014590" elapsed="1.160486">Text '38.498,99 €' (str) should be '36.498,99 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:36:21.014590" elapsed="1.161882">Text '38.498,99 €' (str) should be '36.498,99 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>2</arg>
+<arg>2</arg>
+<arg>2</arg>
+<arg>2</arg>
+<arg>36.498,99 €</arg>
+<status status="FAIL" start="2024-02-24T10:36:05.391700" elapsed="16.784772">Text '38.498,99 €' (str) should be '36.498,99 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Red</tag>
+<tag>Engine=1.6 diesel</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Luxus</tag>
+<status status="FAIL" start="2024-02-24T10:36:05.387309" elapsed="16.789163">Text '38.498,99 €' (str) should be '36.498,99 €' (str)</status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Car 004" line="18">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:36:28.676036" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:36:28.676036" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:36:22.219482" elapsed="6.456554"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:28.676036" elapsed="0.642303"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:29.318339" elapsed="0.561998"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:29.880669" elapsed="0.600579"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:22.219379" elapsed="8.263213"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:30.483707" elapsed="0.571943"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:31.055650" elapsed="0.557220"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:31.641556" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:36:31.641556" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:31.614187" elapsed="0.028706"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:31.643399" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:31.643399" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:31.644512" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:31.643399" elapsed="0.001113"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:36:31.614187" elapsed="0.030325"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:31.644512" elapsed="0.581556"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:36:30.482592" elapsed="1.743476"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:32.227022" elapsed="0.576121"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:32.803143" elapsed="0.547236"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:33.378483" level="INFO">Text: '2.0 diesel\t'</msg>
+<msg time="2024-02-24T10:36:33.378483" level="INFO">${value} = 2.0 diesel	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:33.353656" elapsed="0.024827"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:33.379933" level="INFO">${value} = 2.0 diesel</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:33.378483" elapsed="0.001450"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:33.380437" level="INFO">Set tag 'Engine=2.0 diesel'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:33.380437" elapsed="0.001098"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:36:33.351607" elapsed="0.029928"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:33.381535" elapsed="0.568853"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:36:32.226068" elapsed="1.724320"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:33.951433" elapsed="0.572372"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:34.557125" level="INFO">Text: 'None'</msg>
+<msg time="2024-02-24T10:36:34.557125" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:34.523805" elapsed="0.034785"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:34.558590" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:34.558590" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:34.560745" level="INFO">Set tag 'Package=None'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:34.560745" elapsed="0.001446"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:36:34.523805" elapsed="0.038386"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:34.563292" elapsed="0.599338"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:36:33.950388" elapsed="1.212659"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:35.164170" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:35.165216" elapsed="0.000000"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:36:35.165216" elapsed="0.001002"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:36:35.164170" elapsed="0.002048"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:36:35.164170" elapsed="0.002048"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:35.166218" elapsed="0.570927"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:35.166218" elapsed="0.571672"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:36:35.164170" elapsed="0.573720"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:35.737890" elapsed="0.607701"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:36:35.163109" elapsed="1.182482"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:36.346156" elapsed="0.558240"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:36.924510" level="INFO">Text: 'Blue'</msg>
+<msg time="2024-02-24T10:36:36.925855" level="INFO">${value} = Blue</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:36.905408" elapsed="0.020447"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:36.926862" level="INFO">${value} = Blue</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:36.925855" elapsed="0.001007"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:36.928065" level="INFO">Set tag 'Color=Blue'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:36.926862" elapsed="0.001203"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:36:36.904396" elapsed="0.023669"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:36.928065" elapsed="0.600427"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:36:36.346156" elapsed="1.182454"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:38.559382" level="INFO">Text: '31.560,00 €'</msg>
+<msg time="2024-02-24T10:36:38.698910" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:36:38.699521" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:36:38.699521" level="FAIL">Text '31.560,00 €' (str) should be '31.246,00 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:36:37.529194" elapsed="1.172449">Text '31.560,00 €' (str) should be '31.246,00 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:36:37.529194" elapsed="1.173457">Text '31.560,00 €' (str) should be '31.246,00 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>3</arg>
+<arg>0</arg>
+<arg>3</arg>
+<arg>3</arg>
+<arg>31.246,00 €</arg>
+<status status="FAIL" start="2024-02-24T10:36:22.218331" elapsed="16.484320">Text '31.560,00 €' (str) should be '31.246,00 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Blue</tag>
+<tag>Engine=2.0 diesel</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=None</tag>
+<status status="FAIL" start="2024-02-24T10:36:22.213131" elapsed="16.489520">Text '31.560,00 €' (str) should be '31.246,00 €' (str)</status>
+</test>
+<test id="s1-s1-s1-s1-t5" name="Car 005" line="19">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:36:45.209259" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:36:45.209259" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:36:38.747819" elapsed="6.462965"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:45.210784" elapsed="0.613586"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:45.824370" elapsed="0.546506"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:46.372178" elapsed="0.603909"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:38.746808" elapsed="8.229279"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:46.977099" elapsed="0.573346"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:47.552655" elapsed="0.545417"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:48.133044" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:36:48.133553" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:48.100715" elapsed="0.032838"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:48.135207" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:48.133553" elapsed="0.001654"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:48.136275" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:48.136275" elapsed="0.000000"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:36:48.099087" elapsed="0.037188"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:48.138082" elapsed="0.583129"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:36:46.976087" elapsed="1.745124"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:48.721211" elapsed="0.571836"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:49.293047" elapsed="0.588556"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:49.920459" level="INFO">Text: 'ECOtech with Hybrid\t'</msg>
+<msg time="2024-02-24T10:36:49.920459" level="INFO">${value} = ECOtech with Hybrid	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:49.885570" elapsed="0.034889"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:49.920459" level="INFO">${value} = ECOtech with Hybrid</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:49.920459" elapsed="0.005517"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:49.926487" level="INFO">Set tag 'Engine=ECOtech with Hybrid'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:49.926487" elapsed="0.000000"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:36:49.881603" elapsed="0.046431"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:49.928034" elapsed="0.588694"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:36:48.721211" elapsed="1.795517"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:50.517276" elapsed="0.576841"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:51.175525" level="INFO">Text: 'Gomera'</msg>
+<msg time="2024-02-24T10:36:51.175525" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:51.098621" elapsed="0.076904"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:51.175525" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:51.175525" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:51.175525" level="INFO">Set tag 'Package=Gomera'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:51.175525" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:36:51.095391" elapsed="0.080134"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:51.184340" elapsed="0.574185"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:36:50.517276" elapsed="1.242380"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:51.762072" elapsed="0.000818"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:36:51.763969" elapsed="0.000000"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:36:51.763969" elapsed="0.001071"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:36:51.762890" elapsed="0.002150"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:36:51.760715" elapsed="0.004325"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:51.765989" elapsed="0.568554"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:51.765040" elapsed="0.569503"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:36:51.760715" elapsed="0.573828"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:52.334543" elapsed="0.613122"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:36:51.759656" elapsed="1.188009"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:52.949727" elapsed="0.589834"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:53.565661" level="INFO">Text: 'Grey'</msg>
+<msg time="2024-02-24T10:36:53.565661" level="INFO">${value} = Grey</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:53.541644" elapsed="0.024017"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:36:53.565661" level="INFO">${value} = Grey</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:36:53.565661" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:36:53.568514" level="INFO">Set tag 'Color=Grey'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:36:53.565661" elapsed="0.002853"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:36:53.540600" elapsed="0.027914"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:36:53.568514" elapsed="0.599038"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:36:52.948731" elapsed="1.219828"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:36:55.232057" level="INFO">Text: '35.412,00 €'</msg>
+<msg time="2024-02-24T10:36:55.332602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-4.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-4.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:36:55.333216" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:36:55.333216" level="FAIL">Text '35.412,00 €' (str) should be '35.772,00 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:36:54.169559" elapsed="1.165667">Text '35.412,00 €' (str) should be '35.772,00 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:36:54.168559" elapsed="1.167666">Text '35.412,00 €' (str) should be '35.772,00 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>4</arg>
+<arg>1</arg>
+<arg>4</arg>
+<arg>4</arg>
+<arg>35.772,00 €</arg>
+<status status="FAIL" start="2024-02-24T10:36:38.745762" elapsed="16.590463">Text '35.412,00 €' (str) should be '35.772,00 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Grey</tag>
+<tag>Engine=ECOtech with Hybrid</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Gomera</tag>
+<status status="FAIL" start="2024-02-24T10:36:38.741896" elapsed="16.594841">Text '35.412,00 €' (str) should be '35.772,00 €' (str)</status>
+</test>
+<test id="s1-s1-s1-s1-t6" name="Car 006" line="20">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:37:01.891428" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:37:01.891428" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:36:55.374447" elapsed="6.516981"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:01.891428" elapsed="0.617249"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:02.508677" elapsed="0.558112"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:03.067839" elapsed="0.627019"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:36:55.374069" elapsed="8.321901"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:03.697311" elapsed="0.592633"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:04.289944" elapsed="0.573256"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:04.899986" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:37:04.899986" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:04.865159" elapsed="0.034827"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:04.902534" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:04.899986" elapsed="0.002548"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:04.902534" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:04.902534" elapsed="0.000000"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:37:04.864238" elapsed="0.038296"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:04.902534" elapsed="0.592922"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:37:03.695970" elapsed="1.799486"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:05.496508" elapsed="0.562106"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:06.058614" elapsed="0.580317"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:06.672526" level="INFO">Text: '1.6 gasoline\t'</msg>
+<msg time="2024-02-24T10:37:06.674227" level="INFO">${value} = 1.6 gasoline	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:06.641953" elapsed="0.032274"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:06.676859" level="INFO">${value} = 1.6 gasoline</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:06.674227" elapsed="0.002632"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:06.676859" level="INFO">Set tag 'Engine=1.6 gasoline'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:06.676859" elapsed="0.000000"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:37:06.640682" elapsed="0.036177"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:06.676859" elapsed="0.576434"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:37:05.496508" elapsed="1.757798"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:07.255567" elapsed="0.578847"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:07.872422" level="INFO">Text: 'Luxus'</msg>
+<msg time="2024-02-24T10:37:07.872422" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:07.834414" elapsed="0.042429"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:07.878632" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:07.877356" elapsed="0.001276"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:07.880690" level="INFO">Set tag 'Package=Luxus'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:07.878632" elapsed="0.003083"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:37:07.834414" elapsed="0.047301"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:07.881715" elapsed="0.595102"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:37:07.255567" elapsed="1.222391"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:08.479547" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:08.479547" elapsed="0.001013"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:37:08.479547" elapsed="0.001013"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:37:08.479547" elapsed="0.001013"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:37:08.478526" elapsed="0.002034"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:08.480560" elapsed="0.555475"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:08.480560" elapsed="0.555475"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:37:08.478526" elapsed="0.557509"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:09.036035" elapsed="0.615668"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:37:08.478454" elapsed="1.173249"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:09.652713" elapsed="0.567826"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:10.259977" level="INFO">Text: 'Orange'</msg>
+<msg time="2024-02-24T10:37:10.259977" level="INFO">${value} = Orange</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.224924" elapsed="0.036503"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:10.261510" level="INFO">${value} = Orange</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.261510" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:10.262832" level="INFO">Set tag 'Color=Orange'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.262832" elapsed="0.001062"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:37:10.224924" elapsed="0.038970"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.263894" elapsed="0.601002"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:37:09.651703" elapsed="1.214380"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:10.892170" level="INFO">Text: '34.499,99 €'</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.867483" elapsed="0.025698"/>
+</kw>
+<arg>${PRICE}</arg>
+<status status="PASS" start="2024-02-24T10:37:10.866083" elapsed="0.027098"/>
+</kw>
+<arg>0</arg>
+<arg>0</arg>
+<arg>2</arg>
+<arg>5</arg>
+<arg>5</arg>
+<arg>34.499,99 €</arg>
+<status status="PASS" start="2024-02-24T10:36:55.373662" elapsed="15.519519"/>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Orange</tag>
+<tag>Engine=1.6 gasoline</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Luxus</tag>
+<status status="PASS" start="2024-02-24T10:36:55.370799" elapsed="15.523685"/>
+</test>
+<test id="s1-s1-s1-s1-t7" name="Car 007" line="21">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:37:17.102681" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:37:17.102681" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:37:10.932872" elapsed="6.169809"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:17.102681" elapsed="0.665111"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:17.767792" elapsed="0.554094"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:18.321886" elapsed="0.604737"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:10.931814" elapsed="7.995353"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:18.927628" elapsed="0.571434"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:19.499062" elapsed="0.554859"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:20.092707" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:37:20.095750" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:20.054953" elapsed="0.041330"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:20.096283" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:20.096283" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:20.098289" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:20.098289" elapsed="0.000000"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:37:20.053921" elapsed="0.044368"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:20.098289" elapsed="0.608934"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:37:18.927628" elapsed="1.780612"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:20.709239" elapsed="0.563089"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:21.272328" elapsed="0.574687"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:21.881001" level="INFO">Text: '2.0 gasoline\t'</msg>
+<msg time="2024-02-24T10:37:21.882900" level="INFO">${value} = 2.0 gasoline	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:21.850156" elapsed="0.032744"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:21.882900" level="INFO">${value} = 2.0 gasoline</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:21.882900" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:21.886201" level="INFO">Set tag 'Engine=2.0 gasoline'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:21.884956" elapsed="0.001245"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:37:21.847015" elapsed="0.039186"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:21.886201" elapsed="0.589808"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:37:20.708240" elapsed="1.767769"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:22.477341" elapsed="0.579365"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:23.072455" level="INFO">Text: 'None'</msg>
+<msg time="2024-02-24T10:37:23.072455" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:23.056706" elapsed="0.015749"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:23.072455" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:23.072455" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:23.072455" level="INFO">Set tag 'Package=None'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:23.072455" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:37:23.056706" elapsed="0.015749"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:23.072455" elapsed="0.593692"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:37:22.476738" elapsed="1.190418"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:23.669202" elapsed="0.001007"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:23.671162" elapsed="0.000988"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:37:23.671162" elapsed="0.000988"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:37:23.670209" elapsed="0.002943"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:37:23.668170" elapsed="0.004982"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:23.674148" elapsed="0.563138"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:23.673152" elapsed="0.564134"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:37:23.668170" elapsed="0.569116"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:24.237286" elapsed="0.606323"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:37:23.667156" elapsed="1.176453"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:24.845117" elapsed="0.574370"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:25.452038" level="INFO">Text: 'Purple'</msg>
+<msg time="2024-02-24T10:37:25.452038" level="INFO">${value} = Purple</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:25.419487" elapsed="0.032551"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:25.452038" level="INFO">${value} = Purple</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:25.452038" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:25.452038" level="INFO">Set tag 'Color=Purple'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:25.452038" elapsed="0.003663"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:37:25.419487" elapsed="0.036214"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:25.455701" elapsed="0.604912"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:37:24.844346" elapsed="1.216971"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:26.092759" level="INFO">Text: '32.100,00 €'</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:26.062963" elapsed="0.031508"/>
+</kw>
+<arg>${PRICE}</arg>
+<status status="PASS" start="2024-02-24T10:37:26.061317" elapsed="0.033212"/>
+</kw>
+<arg>0</arg>
+<arg>1</arg>
+<arg>0</arg>
+<arg>6</arg>
+<arg>6</arg>
+<arg>32.100,00 €</arg>
+<status status="PASS" start="2024-02-24T10:37:10.931814" elapsed="15.162715"/>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Purple</tag>
+<tag>Engine=2.0 gasoline</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=None</tag>
+<status status="PASS" start="2024-02-24T10:37:10.927987" elapsed="15.167566"/>
+</test>
+<test id="s1-s1-s1-s1-t8" name="Car 008" line="22">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:37:32.402017" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:37:32.402017" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:37:26.147899" elapsed="6.254118"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:32.403415" elapsed="0.623026"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:33.026441" elapsed="0.563752"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:33.590193" elapsed="0.593381"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:26.147899" elapsed="8.035675"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:34.184571" elapsed="0.593384"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:34.777955" elapsed="0.617286"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:35.425043" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:37:35.425043" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:35.395241" elapsed="0.029802"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:35.426302" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:35.425043" elapsed="0.001764"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:35.426807" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:35.426807" elapsed="0.000000"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:37:35.395241" elapsed="0.031566"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:35.426807" elapsed="0.598578"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:37:34.184571" elapsed="1.840814"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:36.026534" elapsed="0.563737"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:36.590271" elapsed="0.564478"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:37.171882" level="INFO">Text: '1.6 diesel\t'</msg>
+<msg time="2024-02-24T10:37:37.171882" level="INFO">${value} = 1.6 diesel	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:37.154749" elapsed="0.017133"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:37.171882" level="INFO">${value} = 1.6 diesel</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:37.171882" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:37.171882" level="INFO">Set tag 'Engine=1.6 diesel'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:37.171882" elapsed="0.000000"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:37:37.154749" elapsed="0.020143"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:37.174892" elapsed="0.595606"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:37:36.025385" elapsed="1.745113"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:37.771507" elapsed="0.562627"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:38.353693" level="INFO">Text: 'Gomera'</msg>
+<msg time="2024-02-24T10:37:38.353693" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:38.336332" elapsed="0.017361"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:38.356096" level="INFO">${value} = Gomera</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:38.353693" elapsed="0.002403"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:38.357282" level="INFO">Set tag 'Package=Gomera'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:38.357282" elapsed="0.001141"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:37:38.335818" elapsed="0.022605"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:38.358423" elapsed="0.589473"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:37:37.770498" elapsed="1.178462"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:38.952913" elapsed="0.000983"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:38.957939" elapsed="0.001436"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:37:38.956923" elapsed="0.003453"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:37:38.954898" elapsed="0.005478"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:37:38.951946" elapsed="0.008430"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:38.962034" elapsed="0.572838"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:38.961454" elapsed="0.573418"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:37:38.951946" elapsed="0.582926"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:39.534872" elapsed="0.615141"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:37:38.949957" elapsed="1.201122"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:40.153059" elapsed="0.612660"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:40.785104" level="INFO">Text: 'Green'</msg>
+<msg time="2024-02-24T10:37:40.788843" level="INFO">${value} = Green</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:40.765719" elapsed="0.023124"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:40.790260" level="INFO">${value} = Green</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:40.790260" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:40.790260" level="INFO">Set tag 'Color=Green'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:40.790260" elapsed="0.000000"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:37:40.765719" elapsed="0.024541"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:40.795180" elapsed="0.646352"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:37:40.152079" elapsed="1.290469"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:42.488644" level="INFO">Text: '32.622,00 €'</msg>
+<msg time="2024-02-24T10:37:42.633397" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-5.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-5.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:37:42.633397" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:37:42.633397" level="FAIL">Text '32.622,00 €' (str) should be '32.412,00 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:37:41.443780" elapsed="1.191626">Text '32.622,00 €' (str) should be '32.412,00 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:37:41.442548" elapsed="1.193868">Text '32.622,00 €' (str) should be '32.412,00 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>2</arg>
+<arg>1</arg>
+<arg>7</arg>
+<arg>7</arg>
+<arg>32.412,00 €</arg>
+<status status="FAIL" start="2024-02-24T10:37:26.146880" elapsed="16.489536">Text '32.622,00 €' (str) should be '32.412,00 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Green</tag>
+<tag>Engine=1.6 diesel</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Gomera</tag>
+<status status="FAIL" start="2024-02-24T10:37:26.139073" elapsed="16.498410">Text '32.622,00 €' (str) should be '32.412,00 €' (str)</status>
+</test>
+<test id="s1-s1-s1-s1-t9" name="Car 009" line="23">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:37:49.029991" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:37:49.031937" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:37:42.679646" elapsed="6.352291"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:49.034259" elapsed="0.620681"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:49.654940" elapsed="0.553707"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:50.208647" elapsed="0.594816"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:42.678595" elapsed="8.125870"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:50.805466" elapsed="0.609022"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:51.414488" elapsed="0.576686"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:52.042865" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:37:52.042865" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:51.994199" elapsed="0.048666"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:52.042865" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:52.042865" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:52.052219" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:52.042865" elapsed="0.009354"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:37:51.992394" elapsed="0.061264"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:52.053658" elapsed="0.622289"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:37:50.804465" elapsed="1.871885"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:52.678308" elapsed="0.595785"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:53.274093" elapsed="0.544352"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:53.837387" level="INFO">Text: '2.0 diesel\t'</msg>
+<msg time="2024-02-24T10:37:53.837387" level="INFO">${value} = 2.0 diesel	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:53.820183" elapsed="0.017204"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:53.839070" level="INFO">${value} = 2.0 diesel</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:53.839070" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:53.841083" level="INFO">Set tag 'Engine=2.0 diesel'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:53.839070" elapsed="0.002013"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:37:53.818445" elapsed="0.022638"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:53.842092" elapsed="0.598282"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:37:52.677112" elapsed="1.764350"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:54.442107" elapsed="0.564816"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:55.030713" level="INFO">Text: 'Luxus'</msg>
+<msg time="2024-02-24T10:37:55.030713" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:55.006923" elapsed="0.023790"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:55.030713" level="INFO">${value} = Luxus</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:55.030713" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:55.033475" level="INFO">Set tag 'Package=Luxus'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:55.030713" elapsed="0.002762"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:37:55.006923" elapsed="0.026552"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:55.033475" elapsed="0.581439"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:37:54.441462" elapsed="1.174742"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:55.617744" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:37:55.617744" elapsed="0.000999"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:37:55.617744" elapsed="0.000999"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:37:55.617744" elapsed="0.000999"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:37:55.616711" elapsed="0.002032"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:55.618743" elapsed="0.560454"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:55.618743" elapsed="0.560454"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:37:55.616711" elapsed="0.564501"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:56.181212" elapsed="0.618578"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:37:55.616711" elapsed="1.183626"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:56.801382" elapsed="0.570752"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:57.413370" level="INFO">Text: 'Light blue'</msg>
+<msg time="2024-02-24T10:37:57.413370" level="INFO">${value} = Light blue</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:57.384287" elapsed="0.030247"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:37:57.414534" level="INFO">${value} = Light blue</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:37:57.414534" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:37:57.416383" level="INFO">Set tag 'Color=Light blue'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:37:57.414534" elapsed="0.001849"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:37:57.374751" elapsed="0.041632"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:57.416383" elapsed="0.612178"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:37:56.800337" elapsed="1.229244"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:37:58.054807" level="INFO">Text: '36.699,99 €'</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:37:58.030670" elapsed="0.025289"/>
+</kw>
+<arg>${PRICE}</arg>
+<status status="PASS" start="2024-02-24T10:37:58.029581" elapsed="0.026378"/>
+</kw>
+<arg>0</arg>
+<arg>3</arg>
+<arg>2</arg>
+<arg>0</arg>
+<arg>8</arg>
+<arg>36.699,99 €</arg>
+<status status="PASS" start="2024-02-24T10:37:42.678071" elapsed="15.377888"/>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Light blue</tag>
+<tag>Engine=2.0 diesel</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=Luxus</tag>
+<status status="PASS" start="2024-02-24T10:37:42.673346" elapsed="15.383796"/>
+</test>
+<test id="s1-s1-s1-s1-t10" name="Car 010" line="24">
+<kw name="Configure Car">
+<kw name="Create New Car Configuration">
+<kw name="New Page" owner="Browser">
+<msg time="2024-02-24T10:38:04.388957" level="INFO">Successfully initialized new page object and opened url: https://vsr.testbench.com/</msg>
+<msg time="2024-02-24T10:38:04.388957" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://vsr.testbench.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-02-24T10:37:58.115874" elapsed="6.273083"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=english</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:04.388957" elapsed="0.685551"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=As Customer</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:05.076201" elapsed="0.588790"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=New car</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:05.665959" elapsed="0.620148"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:37:58.115874" elapsed="8.170233"/>
+</kw>
+<kw name="Select Model">
+<kw name="Click" owner="Browser">
+<arg>id=select_basemodel</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:06.288226" elapsed="0.595921"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${MODEL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:06.884147" elapsed="0.569494"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:38:07.491695" level="INFO">Text: 'Model 1 (I5)\t'</msg>
+<msg time="2024-02-24T10:38:07.491695" level="INFO">${value} = Model 1 (I5)	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:07.457090" elapsed="0.034605"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:38:07.494651" level="INFO">${value} = Model 1 (I5)</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:38:07.494144" elapsed="0.000507"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:38:07.494651" level="INFO">Set tag 'Model=Model 1 (I5)'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:38:07.494651" elapsed="0.000000"/>
+</kw>
+<arg>id=select_basemodel</arg>
+<arg>Model</arg>
+<status status="PASS" start="2024-02-24T10:38:07.455052" elapsed="0.039599"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:07.496418" elapsed="0.582267"/>
+</kw>
+<arg>${MODEL}</arg>
+<status status="PASS" start="2024-02-24T10:38:06.287123" elapsed="1.792543"/>
+</kw>
+<kw name="Select Engine">
+<kw name="Click" owner="Browser">
+<arg>id=select_engine</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:08.082679" elapsed="0.587744"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>mat-option &gt;&gt; nth=${ENGINE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:08.670423" elapsed="0.573187"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:38:09.279980" level="INFO">Text: 'ECOtech with Hybrid\t'</msg>
+<msg time="2024-02-24T10:38:09.281913" level="INFO">${value} = ECOtech with Hybrid	</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:09.246472" elapsed="0.035441"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:38:09.283202" level="INFO">${value} = ECOtech with Hybrid</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:38:09.283202" elapsed="0.001174"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:38:09.284376" level="INFO">Set tag 'Engine=ECOtech with Hybrid'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:38:09.284376" elapsed="0.002551"/>
+</kw>
+<arg>id=select_engine</arg>
+<arg>Engine</arg>
+<status status="PASS" start="2024-02-24T10:38:09.244446" elapsed="0.043713"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:09.288159" elapsed="0.591219"/>
+</kw>
+<arg>${ENGINE}</arg>
+<status status="PASS" start="2024-02-24T10:38:08.080672" elapsed="1.799754"/>
+</kw>
+<kw name="Select Package">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${PACKAGE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:09.881420" elapsed="0.592126"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:38:10.511336" level="INFO">Text: 'None'</msg>
+<msg time="2024-02-24T10:38:10.511848" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:10.475112" elapsed="0.036736"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:38:10.513689" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:38:10.511848" elapsed="0.003245"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:38:10.517109" level="INFO">Set tag 'Package=None'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:38:10.515093" elapsed="0.002016"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Package</arg>
+<status status="PASS" start="2024-02-24T10:38:10.473546" elapsed="0.043563"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:10.517109" elapsed="0.611225"/>
+</kw>
+<arg>${PACKAGE}</arg>
+<status status="PASS" start="2024-02-24T10:38:09.880426" elapsed="1.248949"/>
+</kw>
+<kw name="Select Extras">
+<if>
+<branch type="IF" condition="'${EXTRAS}' == '*'">
+<kw name="Get Elements" owner="Browser">
+<var>${extras_elements}</var>
+<arg>mat-checkbox</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:38:11.131371" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<arg>${extra}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-02-24T10:38:11.132370" elapsed="0.000000"/>
+</kw>
+<var name="${extra}"/>
+<status status="NOT RUN" start="2024-02-24T10:38:11.132370" elapsed="0.000000"/>
+</iter>
+<var>${extra}</var>
+<value>@{extras_elements}</value>
+<status status="NOT RUN" start="2024-02-24T10:38:11.131371" elapsed="0.000999"/>
+</for>
+<status status="NOT RUN" start="2024-02-24T10:38:11.130325" elapsed="0.003038"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" owner="Browser">
+<arg>mat-checkbox &gt;&gt; nth=${EXTRAS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:11.133363" elapsed="0.584807"/>
+</kw>
+<status status="PASS" start="2024-02-24T10:38:11.133363" elapsed="0.584807"/>
+</branch>
+<status status="PASS" start="2024-02-24T10:38:11.130325" elapsed="0.587845"/>
+</if>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:11.718170" elapsed="0.634898"/>
+</kw>
+<arg>${EXTRAS}</arg>
+<status status="PASS" start="2024-02-24T10:38:11.129375" elapsed="1.223693"/>
+</kw>
+<kw name="Select Color">
+<kw name="Click" owner="Browser">
+<arg>mat-radio-button &gt;&gt; nth=${COLOR}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:12.354568" elapsed="0.571062"/>
+</kw>
+<kw name="Set Tag From Element">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:38:12.941656" level="INFO">Text: 'Black'</msg>
+<msg time="2024-02-24T10:38:12.941656" level="INFO">${value} = Black</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:12.925630" elapsed="0.016026"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-02-24T10:38:12.941656" level="INFO">${value} = Black</msg>
+<var>${value}</var>
+<arg>${value}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-02-24T10:38:12.941656" elapsed="0.000000"/>
+</kw>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-02-24T10:38:12.941656" level="INFO">Set tag 'Color=Black'.</msg>
+<arg>${prefix}=${value}</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-02-24T10:38:12.941656" elapsed="0.013131"/>
+</kw>
+<arg>mat-radio-button.mat-radio-checked</arg>
+<arg>Color</arg>
+<status status="PASS" start="2024-02-24T10:38:12.925630" elapsed="0.029157"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=arrow_next</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-02-24T10:38:12.954787" elapsed="0.608754"/>
+</kw>
+<arg>${COLOR}</arg>
+<status status="PASS" start="2024-02-24T10:38:12.353068" elapsed="1.210473"/>
+</kw>
+<kw name="Check Price">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-02-24T10:38:14.610946" level="INFO">Text: '34.045,00 €'</msg>
+<msg time="2024-02-24T10:38:14.782126" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-6.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-6.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-02-24T10:38:14.782903" level="INFO">See also file:///C:/workspace/RBCN24/robot-framework-reporting/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-02-24T10:38:14.782903" level="FAIL">Text '34.045,00 €' (str) should be '34.209,00 €' (str)</msg>
+<arg>id=label_price_sum</arg>
+<arg>==</arg>
+<arg>${PRICE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-02-24T10:38:13.564552" elapsed="1.220710">Text '34.045,00 €' (str) should be '34.209,00 €' (str)</status>
+</kw>
+<arg>${PRICE}</arg>
+<status status="FAIL" start="2024-02-24T10:38:13.563541" elapsed="1.221721">Text '34.045,00 €' (str) should be '34.209,00 €' (str)</status>
+</kw>
+<arg>0</arg>
+<arg>4</arg>
+<arg>0</arg>
+<arg>1</arg>
+<arg>9</arg>
+<arg>34.209,00 €</arg>
+<status status="FAIL" start="2024-02-24T10:37:58.112680" elapsed="16.673835">Text '34.045,00 €' (str) should be '34.209,00 €' (str)</status>
+</kw>
+<tag>car-configurator</tag>
+<tag>Color=Black</tag>
+<tag>Engine=ECOtech with Hybrid</tag>
+<tag>Model=Model 1 (I5)</tag>
+<tag>Package=None</tag>
+<status status="FAIL" start="2024-02-24T10:37:58.110175" elapsed="16.676340">Text '34.045,00 €' (str) should be '34.209,00 €' (str)</status>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2024-02-24T10:38:15.537662" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-02-24T10:38:14.820422" elapsed="0.717240"/>
+</kw>
+<status status="FAIL" start="2024-02-24T10:35:29.020476" elapsed="166.517186"/>
+</suite>
+<status status="FAIL" start="2024-02-24T10:35:29.011547" elapsed="166.600318"/>
+</suite>
+<status status="FAIL" start="2024-02-24T10:35:29.005587" elapsed="166.609715"/>
+</suite>
+<status status="FAIL" start="2024-02-24T10:35:28.921504" elapsed="166.696334"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="6" skip="0">car-configurator</stat>
+<stat pass="0" fail="1" skip="0">Color=Black</stat>
+<stat pass="0" fail="1" skip="0">Color=Blue</stat>
+<stat pass="0" fail="1" skip="0">Color=Green</stat>
+<stat pass="0" fail="1" skip="0">Color=Grey</stat>
+<stat pass="1" fail="0" skip="0">Color=Light blue</stat>
+<stat pass="1" fail="0" skip="0">Color=Orange</stat>
+<stat pass="1" fail="0" skip="0">Color=Purple</stat>
+<stat pass="0" fail="1" skip="0">Color=Red</stat>
+<stat pass="1" fail="0" skip="0">Color=White</stat>
+<stat pass="0" fail="1" skip="0">Color=Yellow</stat>
+<stat pass="0" fail="2" skip="0">Engine=1.6 diesel</stat>
+<stat pass="2" fail="0" skip="0">Engine=1.6 gasoline</stat>
+<stat pass="1" fail="1" skip="0">Engine=2.0 diesel</stat>
+<stat pass="1" fail="1" skip="0">Engine=2.0 gasoline</stat>
+<stat pass="0" fail="2" skip="0">Engine=ECOtech with Hybrid</stat>
+<stat pass="4" fail="6" skip="0">Model=Model 1 (I5)</stat>
+<stat pass="0" fail="3" skip="0">Package=Gomera</stat>
+<stat pass="2" fail="1" skip="0">Package=Luxus</stat>
+<stat pass="2" fail="2" skip="0">Package=None</stat>
+</tag>
+<suite>
+<stat pass="4" fail="6" skip="0" id="s1" name="Robot-Framework-Reporting">Robot-Framework-Reporting</stat>
+<stat pass="4" fail="6" skip="0" id="s1-s1" name="Tests">Robot-Framework-Reporting.Tests</stat>
+<stat pass="4" fail="6" skip="0" id="s1-s1-s1" name="Car Configurator">Robot-Framework-Reporting.Tests.Car Configurator</stat>
+<stat pass="4" fail="6" skip="0" id="s1-s1-s1-s1" name="Cars">Robot-Framework-Reporting.Tests.Car Configurator.Cars</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
