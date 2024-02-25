@@ -15,6 +15,9 @@ It will be used to demonstrate the following:
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/manykarim/robotframework-reporting)  
 Try it out in  [Gitpod](https://gitpod.io/#https://github.com/manykarim/robotframework-reporting)
 
+## Try it out in Google CoLab
+[![Try it out in CoLab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/manykarim/robot-framework-reporting/blob/main/robot_framework_reporting.ipynb)  
+Try it out in [CoLab](https://colab.research.google.com/github/manykarim/robot-framework-reporting/blob/main/robot_framework_reporting.ipynb)
 
 ## Structure of the repository
 

@@ -168,7 +168,7 @@ def upload_results(output, run, project, version):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", default="1")
-    parser.add_argument("--output", default="output.xml")
+    parser.add_argument("--output", default="results/output.xml")
     parser.add_argument("--project", default="myproject")
     parser.add_argument("--version", default="1.0.0")
     args = parser.parse_args()
