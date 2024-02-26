@@ -1,4 +1,4 @@
---listener 04_listener_influxdb/InfluxListener
+--listener 04_listener_influxdb/InfluxListener.py
 --output NONE
 --log NONE
 --report NONE
