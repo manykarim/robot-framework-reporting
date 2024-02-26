@@ -26,22 +26,49 @@ The repository is structured as follows:
 The repository is structured into the following sections:
 
 - **01_resultmodel**:   
-    This section demonstrates how to use the `ExecutionResult` and `ResultVisitor` of the Robot Framework API to generate custom reports.
+    This section demonstrates how to use the `ExecutionResult` and `ResultVisitor` of the Robot Framework API to generate custom reports.  
+    1. Run some Robot Framework tests and produce an `output.xml`
+    2. Run `python 01_resultmodel/report-results.py <PathToOutput.xml> <PathToMarkdownFile>` to generate a markdown report
 
 - **02_report_to_postgres**:  
     This section demonstrates how to publish test results to a PostgreSQL database and visualize the results using Grafana.
+    1. Start the docker scripts (from project root)  
+        1. `create_network.sh`
+        2. `start_postgres.sh`
+        3. `start_grafana.sh`
+    2. `cd 02_report_to_postgres`
+    3. Run `send_results.sh` to send multiple test results to postgres
+    3. Open `localhost:3000` to login to Grafana and check the `PostgreSQL` Dashboard
 
 - **03_allure**:  
     This section demonstrates how to use Allure to generate a visually appealing report.
 
 - **04_listener_influxdb**:  
     This section demonstrates how to use a Listener to monitor test execution in realtime and publish them to InfluxDB and visualize the results using Grafana.
+    1. Start the docker scripts (from project root)  
+        1. `create_network.sh` (if not already done)
+        2. `start_influxdb.sh`
+        3. `start_grafana.sh` (if not already done)
+    2. Run `04_listener_influxdb/run_with_listener.sh` from project root to execute tests and send results in real-time
+    3. Open `localhost:3000` to login to Grafana and check the `InfluxDB` Dashboard
 
 - **05_notifications**:  
     This section demonstrates how to send notifications to Slack and MS Teams using Apprise.
+    1. Set up Webhook for MS Teams or Slack Channel 
+    2. Run some Robot Framework tests and produce an `output.xml`
+    3. Adjust the `05_notifications/report_to_msteams.py`and `05_notifications/report_to_slack.py` to your needs (`output.xml` path the Webhook data is current hardcoded)
+    3. Run `05_notifications/report_to_msteams.py`or `05_notifications/report_to_slack.py` and try send notifications to your Teams/Slack Channel
 
 - **06_reportportal**:  
     This section demonstrates how to publish test results to ReportPortal and visualize them.
+    1. Run your own Report Portal instance using the `06_reportportal/docker-compose.yml`  
+    ```shell
+    cd 06_reportportal
+    docker-compose -p reportportal up -d --force-recreate
+    ```
+    or [register for a trial at Report Portal](https://reportportal.io/pricing/saas)   
+    2. Set up a user, a project (e.g. `robocon-io`) and generate an API Token for your user
+    3. Adjust and Run `06_reportportal/run_and_publish.sh` from project root to run tests and publish them to Report Portal 
 
 ## Docker Containers for PostgreSQL, InfluxDB and Grafana
 
