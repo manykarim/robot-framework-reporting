@@ -62,4 +62,4 @@ This is necessary to allow the containers to communicate with each other.
 - `start_grafana.sh` starts a Grafana container with the name `grafana`  
 Datasources for PostgreSQL and InfluxDB are created automatically.
     - User: `admin`
-    - Password: `robotframework`  
+    - Password: `robocon`  
