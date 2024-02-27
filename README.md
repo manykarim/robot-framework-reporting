@@ -7,7 +7,7 @@ It will be used to demonstrate the following:
 - Creating a Markdown report for GitHub Actions
 - Publishing Test Results to a PosgreSQL database and visualizing the results using [Grafana](https://grafana.com/)
 - Using a Listener to capture test results and publish them to [InfluxDB](https://www.influxdata.com/) and visualize the results using [Grafana](https://grafana.com/)
-- Using [Allure](https://allurereport.org/) to generate a visually appealing [report](https://manykarim.github.io/robot-framework-reporting/9/allure-report/index.html)
+- Using [Allure](https://allurereport.org/) to generate a visually appealing [report](https://manykarim.github.io/robot-framework-reporting/)
 - Sending notifications to Slack and MS Teams using [Apprise](https://github.com/caronc/apprise)
 - Using [ReportPortal](https://reportportal.io/) to publish test results and visualize them
 
