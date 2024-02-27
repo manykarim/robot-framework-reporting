@@ -12,7 +12,7 @@ It will be used to demonstrate the following:
 - Using [ReportPortal](https://reportportal.io/) to publish test results and visualize them
 
 ## Open the project in Gitpod.io
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/manykarim/robotframework-reporting)  
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/manykarim/robot-framework-reporting)  
 Try it out in  [Gitpod](https://gitpod.io/#https://github.com/manykarim/robot-framework-reporting)
 
 ## Try it out in Google CoLab
