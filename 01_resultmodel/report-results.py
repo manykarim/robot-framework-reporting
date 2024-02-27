@@ -32,7 +32,7 @@ class TestFinder(ResultVisitor):
             "NOT RUN": "NOT RUN",
             "NOT SET": "❓ NOT SET",
              }
-        self.f.write(f"| {test.name} | {status_emoji.get(test.status, "unknown")} | {test.elapsed_time.total_seconds()} |\n")
+        self.f.write(f"| {test.name} | {status_emoji.get(test.status, 'unknown')} | {test.elapsed_time.total_seconds()} |\n")
 
     def end_suite(self,suite):
         if suite.tests:
