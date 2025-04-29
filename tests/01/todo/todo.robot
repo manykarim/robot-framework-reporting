@@ -7,7 +7,7 @@ Test Teardown    Close Context
 Suite Teardown    Close Browser
 
 *** Variables ***
-${BROWSER}    chromium
+${BROWSER}    firefox
 ${HEADLESS}    True
 
 *** Test Cases ***
