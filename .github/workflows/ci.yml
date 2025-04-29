@@ -37,7 +37,7 @@ jobs:
       run: |
         robot -d results --exclude car-configurator tests
     - name: Store Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success() || failure() 
       with:
         name: test-results ${{ matrix.python-version }} # Choose a descriptive name for your artifact
